@@ -1,3 +1,4 @@
+console.log("Anubis:", Anubis);
 class Juego {
   constructor(alma, preguntas) {
     this.alma = alma;
