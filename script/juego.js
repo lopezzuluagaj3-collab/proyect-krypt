@@ -15,13 +15,10 @@ class Juego {
 
   siguientePregunta() {
     
-    if (this.preguntas.length === 0) {
-      this.finalizar();
-      return;
-    }
-    if (this.preguntasUsadas.length === 4){
-      this.finalizar();
-      return;
+    if (this.preguntasUsadas.length === 4 || this.preguntas.length === 0) {
+      this.preguntaActual= null
+      this.finalizar()
+      return 
     }
 
     const index = Math.floor(Math.random() * this.preguntas.length);
@@ -36,6 +33,7 @@ class Juego {
   }
 
   finalizar() {
-    console.log(this.anubis.juzgar(this.alma));
+    return this.anubis.juzgar(this.alma);
   }
+  
 }

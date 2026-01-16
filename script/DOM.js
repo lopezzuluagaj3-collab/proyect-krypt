@@ -69,17 +69,18 @@ function renderizarPregunta(pregunta) {
   }
 
 function actualizarUI() {
-  if(!juego) {
-    console.log("Juego no existe.")
-    return
-  } 
+  if(!juego) return
     purezaEl.textContent = juego.alma.pureza
 
     if (juego.preguntaActual) {
       renderizarPregunta(juego.preguntaActual)
     }else {
-      mensajeAnubisEl.textContent = juego.anubis.juzgar(juego.alma)
+      mensajeAnubisEl.textContent = juego.finalizar();
       preguntaEl.textContent = ""
       opcionesEl.innerHTML =""
+
+      setTimeout(() => {
+    window.location.href = "../index.html";
+  }, 6000);
     }
   }

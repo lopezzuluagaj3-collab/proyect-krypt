@@ -11,8 +11,8 @@ class Anubis {
     const destino = alma.evaluarDestino();
 
     if (destino === "salvada") {
-      return this.hablar("Tu corazón es ligero como la pluma de Maat.");
+      return this.hablar(`${alma.nombre} Tu corazón es ligero como la pluma de Maat.`);
     }
-    return this.hablar("Tu corazón pesa demasiado. Ammut te espera.");
+    return this.hablar(`${alma.nombre} Tu corazón pesa demasiado. Ammut te espera.`);
   }
 }
