@@ -13,11 +13,6 @@ class Anubis {
     if (destino === "salvada") {
       return this.hablar("Tu corazón es ligero como la pluma de Maat.");
     }
-
-    if (destino === "dudosa") {
-      return this.hablar("La balanza duda… tu alma no es pura ni corrupta.");
-    }
-
     return this.hablar("Tu corazón pesa demasiado. Ammut te espera.");
   }
 }

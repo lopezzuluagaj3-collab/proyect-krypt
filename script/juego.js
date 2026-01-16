@@ -3,7 +3,7 @@ class Juego {
   constructor(alma, preguntas) {
     this.alma = alma;
     this.anubis = new Anubis();
-    this.preguntas = preguntas;
+    this.preguntas = [...preguntas];
     this.preguntasUsadas = [];
     this.preguntaActual = null;
   }
@@ -14,7 +14,12 @@ class Juego {
   }
 
   siguientePregunta() {
+    
     if (this.preguntas.length === 0) {
+      this.finalizar();
+      return;
+    }
+    if (this.preguntasUsadas.length === 4){
       this.finalizar();
       return;
     }
