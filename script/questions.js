@@ -46,7 +46,6 @@ function getRandomQuestions3() {
 }
 
 
-
 //pasar al dar click al contenerdo padre
 const containerQuestionMain = document.getElementById('containerQuestionMain');
 const textMainFromGame = document.getElementById(`textMainFromGame`);
