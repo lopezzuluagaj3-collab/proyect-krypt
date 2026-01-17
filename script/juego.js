@@ -15,8 +15,10 @@ class Juego {
 
   siguientePregunta() {
     if (this.preguntas.length === 0) {
+      
       this.finalizar();
       return;
+
     }
 
     const index = Math.floor(Math.random() * this.preguntas.length);

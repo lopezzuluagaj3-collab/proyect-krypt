@@ -1,4 +1,4 @@
-class Alma {
+export class Alma {
   constructor(nombre) {
     this.nombre = nombre;
     this.pureza = 50;

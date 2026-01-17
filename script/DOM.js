@@ -38,18 +38,7 @@ function renderizarPregunta(pregunta) {
 }
 
 
-const alma = new Alma("jugador")
 
-/*const preguntas = [
-  new Pregunta("¿Mentiste para salvar a alguien?", [
-    { texto: "Sí", impacto: { pureza: +10 } },
-    { texto: "No", impacto: { pureza: -10 } }
-  ]),
-  new Pregunta("¿Ayudaste sin esperar nada?", [
-    { texto: "Sí", impacto: { pureza: +10 } },
-    { texto: "No", impacto: { pureza: -5 } }
-  ])
-];*/
 
 const juego = new Juego(alma, preguntas)
 
