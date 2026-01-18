@@ -45,6 +45,7 @@ const preguntas = [
 btnNames.addEventListener("click", () => {
   const alma = new Alma(names.value);
   juego = new Juego(alma, preguntas);
+  console.log("Juego creado:", juego);
   juego.iniciar();
   actualizarUI();
   
@@ -60,7 +61,18 @@ function renderizarPregunta(pregunta) {
       btn.textContent = opcion.texto;
 
       btn.addEventListener("click", () => {
+        // 1️⃣ Capturar impacto antes de cambiar de pregunta
+        const impacto = juego.preguntaActual.obtenerImpacto(index);
+
+        // 2️⃣ Aplicar respuesta al juego
         juego.responder(index);
+
+        // 3️⃣ Reacción inmediata de Anubis
+        mensajeAnubisEl.textContent = juego.anubis.reaccionar(impacto);
+        setTimeout(() => {
+          mensajeAnubisEl.textContent = "";
+        }, 2000);
+        // 4️⃣ Actualizar interfaz
         actualizarUI();
       });
 

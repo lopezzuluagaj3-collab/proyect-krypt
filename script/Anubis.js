@@ -4,7 +4,14 @@ class Anubis {
   }
 
   hablar(texto) {
-    return `🗣️ Anubis: ${texto}`;
+    return `Anubis: ${texto}`;
+  }
+  reaccionar(impacto) {
+    if (impacto.pureza > 0) {
+      return this.hablar(fraseAleatoria(ANUBIS_PUREZA_POSITIVA));
+    } else {
+      return this.hablar(fraseAleatoria(ANUBIS_PUREZA_NEGATIVA));
+    }
   }
 
   juzgar(alma) {
