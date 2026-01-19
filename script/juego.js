@@ -1,4 +1,3 @@
-console.log("Anubis:", Anubis);
 class Juego {
   constructor(alma, preguntas) {
     this.alma = alma;
@@ -6,16 +5,33 @@ class Juego {
     this.preguntas = [...preguntas];
     this.preguntasUsadas = [];
     this.preguntaActual = null;
+    this.currentIndex = 0;
+    this.anubisSteps = [
+      `Bienvenido, alma errante de <b>${this.alma.nombre}</b>. Has llegado al Salón de las Dos Verdades.`, 
+      "Entrega tu corazón. Lo pondré en el plato de la balanza.",
+      "Si tu corazón es más pesado que la verdad, Ammit te espera.",
+      "Silencio... La balanza se detiene.",
+      "¿Estás listo?"
+    ];
   }
-
+  preambulo(){
+    if(this.currentIndex < this.anubisSteps.length){
+      const contenido = this.anubisSteps[this.currentIndex];
+      this.currentIndex ++
+      return contenido
+    }
+    return null;
+  }
   iniciar() {
+    
     console.log(this.anubis.hablar("El juicio ha comenzado."));
     this.siguientePregunta();
+    actualizarUI();
   }
 
   siguientePregunta() {
     
-    if (this.preguntasUsadas.length === 4 || this.preguntas.length === 0) {
+    if (this.preguntasUsadas.length === 6 || this.preguntas.length === 0) {
       this.preguntaActual= null
       this.finalizar()
       return 

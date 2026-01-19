@@ -7,6 +7,7 @@ const mensajeAnubisEl = document.getElementById("messages-anubis");
 
 let juego=null
 
+
 const preguntas = [
   new Pregunta("¿Mentiste para salvar a alguien?", [
     { texto: "Sí", impacto: { pureza: +5 } },
@@ -45,13 +46,34 @@ const preguntas = [
 btnNames.addEventListener("click", () => {
   const alma = new Alma(names.value);
   juego = new Juego(alma, preguntas);
-  console.log("Juego creado:", juego);
-  juego.iniciar();
-  actualizarUI();
+  btnNames.style.display = "none"
+  names.style.display = "none"
+  renderizarPreambulo();
   
 })
+function renderizarPreambulo(){
+  const preambulo = juego.preambulo()
+  if(preambulo){
+    mensajeAnubisEl.innerHTML = `${preambulo}`;
+    opcionesEl.innerHTML = "";
+    const btn = document.createElement("button")
+      btn.textContent = "continue"
+      btn.addEventListener('click', () => {
+        renderizarPreambulo();
+        btn.style.display = "none"
+      });
 
+    opcionesEl.appendChild(btn);
+  } else {
+    preguntaEl.textContent = "Comencemos!!";
+    preguntas.innerHTML = "";
+    mensajeAnubisEl.innerHTML = "";
+    setTimeout(() => {
+        juego.iniciar();
+      }, 2000);
+  }
 
+}
 function renderizarPregunta(pregunta) {
     preguntaEl.textContent = pregunta.texto;
     opcionesEl.innerHTML = ""; 
@@ -61,18 +83,15 @@ function renderizarPregunta(pregunta) {
       btn.textContent = opcion.texto;
 
       btn.addEventListener("click", () => {
-        // 1️⃣ Capturar impacto antes de cambiar de pregunta
+        
         const impacto = juego.preguntaActual.obtenerImpacto(index);
 
-        // 2️⃣ Aplicar respuesta al juego
         juego.responder(index);
 
-        // 3️⃣ Reacción inmediata de Anubis
         mensajeAnubisEl.textContent = juego.anubis.reaccionar(impacto);
         setTimeout(() => {
           mensajeAnubisEl.textContent = "";
-        }, 2000);
-        // 4️⃣ Actualizar interfaz
+        }, 6000);
         actualizarUI();
       });
 
