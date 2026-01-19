@@ -1,35 +1,25 @@
-class Alma {
-  constructor(nombre) {
-    this.nombre = nombre;
-    this.pureza = 50;
-    this.pecados = 0;
-    this.virtudes = 0;
-    this.estado = "juzgando";
+class Anubis {
+  constructor() {
+    this.umbral = 70;
   }
 
-  aumentarPureza(valor) {
-    this.pureza = Math.min(100, this.pureza + valor);
-    this.virtudes++;
+  hablar(texto) {
+    return `Anubis: ${texto}`;
   }
-
-  disminuirPureza(valor) {
-    this.pureza = Math.max(0, this.pureza - valor);
-    this.pecados++;
-  }
-
-  responder(impacto) {
+  reaccionar(impacto) {
     if (impacto.pureza > 0) {
-      this.aumentarPureza(impacto.pureza);
+      return this.hablar(fraseAleatoria(ANUBIS_PUREZA_POSITIVA));
     } else {
-      this.disminuirPureza(Math.abs(impacto.pureza));
+      return this.hablar(fraseAleatoria(ANUBIS_PUREZA_NEGATIVA));
     }
   }
 
-  evaluarDestino() {
-    if (this.pureza >= 70) this.estado = "salvada";
-    else if (this.pureza >= 40) this.estado = "dudosa";
-    else this.estado = "condenada";
+  juzgar(alma) {
+    const destino = alma.evaluarDestino();
 
-    return this.estado;
+    if (destino === "salvada") {
+      return this.hablar(`${alma.nombre} Tu corazón es ligero como la pluma de Maat.`);
+    }
+    return this.hablar(`${alma.nombre} Tu corazón pesa demasiado. Ammut te espera.`);
   }
 }
