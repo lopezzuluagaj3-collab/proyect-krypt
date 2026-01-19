@@ -12,15 +12,21 @@
 
     <section class="game-container">
         <div class="game">
-
             <h1>Anubis juzga tu alma</h1>
+
+        <input type="text" id="name" placeholder="Alma a Juzgar: ">
+        <button id="btn-name">Send</button>
 
         </div>
     </section>
-
-    <div class="question-box">
-        <p id="question">Pregunta aquí...</p>
+    <div class="anubis">
+        <h3 id="messages-anubis"></h3>
     </div>
+    <div class="question-box">
+        <p id="question"></p>
+    </div>
+    <!--anubis-->
+    
 
     <footer class="uix-container">
         <div class="uix">
@@ -33,7 +39,7 @@
                 </div>
             </div>
 
-            <div class="choices">
+            <div id="option" class="choices">
                 <button onclick="answer('good')">INTERVENIR</button>
                 <button onclick="answer('bad')">IGNORAR</button>
             </div>
