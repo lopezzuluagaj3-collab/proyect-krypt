@@ -3,19 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>menu</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <title>Crypt</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="script/main-menu.js" defer></script>
 </head>
-<body>
-    <div>
-        <h1>hola</h1>
-        <div> <img src="" alt=""></div>
-        <div>
-            <button>Jugar</button>
-            <button>Intruciones</button>
-        </div>
-    </div>
+<body class="m-0 p-0">
 
-    <script src="./script/ejemplo.js"></script>
+    <div class="Bg-Img" id="Toggle-bg">
+
+        <div class="Sound-system">
+            <button id="btn-Song"><i id="Song-Icon" class="bi bi-volume-mute"></i>MUTED</button>
+        </div>
+
+        <video class="video-bg" id="bgVideo" loop muted playsinline>
+            <source src="animations/Menu.mp4" type="video/mp4">
+        </video>
+
+        <div class="Main-Options">
+            <div class="Logo-Container">
+                <img src="img/Logo.png" alt="F">
+            </div>
+            <button class="btn-main" id="Start-Game">Start</button>
+            <button class="btn-main">Instructions</button>
+        </div>
+
+    </div>
+    
+
+
+    
 </body>
 </html>

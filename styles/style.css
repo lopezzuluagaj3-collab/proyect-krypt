@@ -1,0 +1,139 @@
+:root{
+    --Bg-Ui-Main: rgba(49, 48, 48, 0.747); 
+    --Btn-Color : #C2A66F;
+    --Btn-color-2: #E6D7A3; 
+    --Btn-Shadow: #7a6845;
+}
+
+body {
+    font-family: 'VT323', monospace;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.Bg-Img{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("/img/Menu.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.Bg-start .video-bg {
+    opacity: 1;
+}
+
+.Bg-start{
+    background-image: none !important;
+}
+
+.Bg-start .Main-Options {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.Main-Options{
+    box-sizing: border-box;
+    position: absolute;
+    display: flex;
+    z-index: 2;
+    background-color: var(--Bg-Ui-Main);
+    width: 40%;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px;
+    gap: 30px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+}
+
+.Logo-Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.Logo-Container img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.Logo-Container img:hover {
+    transform: scale(1.02);
+}
+
+.btn-main{
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 70px;
+    border-radius: 20px;
+    background-color: var(--Btn-Color);
+    border: none;
+    transition: all 0.1s ease;
+    box-shadow: 0 6px 0px var(--Btn-Shadow);
+}
+
+.btn-main:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0px var(--Btn-Shadow);
+    background-color: var(--Btn-color-2);
+}
+
+.btn-main:active{
+    transform: translateY(4px);
+    box-shadow: 0 2px 0px var(--Btn-Shadow);
+    filter: brightness(0.9);
+}
+
+.Sound-system{
+    min-width: 120px;
+    width: auto;
+    position: absolute;
+    z-index: 2;
+    top: 1rem;
+    right: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 6px;
+}
+
+#btn-Song{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: solid 2px var(--Btn-Color);
+    background: none;
+    border-radius: 10px;
+    color: var(--Btn-color-2);
+    font-size: 22px;
+    gap: 5px;
+}
