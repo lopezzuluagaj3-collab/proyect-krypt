@@ -10,36 +10,38 @@
 
 <body>
 
-    <div class="game">
+    <section class="game-container">
+        <div class="game">
 
-        <h1>Anubis juzga tu alma</h1>
+            <h1>Anubis juzga tu alma</h1>
 
-        <div class="scene">
-            <img src="assets/anubis.png" class="anubis" alt="Anubis">
-
-            <div class="question-box">
-                <p id="question">Pregunta aquí...</p>
-            </div>
         </div>
+    </section>
 
+    <div class="question-box">
+        <p id="question">Pregunta aquí...</p>
     </div>
 
-    <div class="uix">
-    
-        <div class="hud">
-            <span>ALMA</span>
-            <div class="life-bar">
-                <div class="life-fill" id="lifeFill"></div>
+    <footer class="uix-container">
+        <div class="uix">
+
+            <img src="../assets/icons/face.png" width="" alt="">
+            <div class="hud">
+                <span>ALMA</span>
+                <div class="life-bar">
+                    <div class="life-fill" id="lifeFill"></div>
+                </div>
             </div>
+
+            <div class="choices">
+                <button onclick="answer('good')">INTERVENIR</button>
+                <button onclick="answer('bad')">IGNORAR</button>
+            </div>
+
         </div>
-    
-        <div class="choices">
-            <button onclick="answer('good')">INTERVENIR</button>
-            <button onclick="answer('bad')">IGNORAR</button>
-        </div>
-    
-    </div>
+    </footer>
 
     <script src="../script/main.js"></script>
 </body>
+
 </html>
