@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+:root {
+    --ui: #be8b5088;
+    --btn: #7d5d3b;
+    --Bg-Ui-Main: rgba(49, 48, 48, 0.747); 
+    --Btn-Color : #C2A66F;
+    --Btn-color-2: #E6D7A3; 
+    --Btn-Shadow: #7a6845;
+    --judge: #f5e6c8;
+}
+
+input::placeholder{
+    font-size: 15px;
+}
+
+body {
+    background: url("../assets/images/AnubisPlace.png");
+    background-size: cover;
+}
+
+.game {
+    display: grid;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.65);
+    border: 2px solid #caa24d;
+    padding: 20px;
+    gap: 20px;
+    color: #f5e6c8;
+    border-radius: 1rem 1rem 7rem 7rem;  
+}
+
+input {
+    background: var(--judge);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.name-container {
+    display: flex;
+    justify-content: center;
+}
+
+.game-container{
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.scene {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.anubis {
+    width: 220px;
+}
+
+.question-box {
+    width: 30%;
+    height: 20%;
+    position: absolute;
+    left: 60%;
+    top: 18%;
+    flex: 1;
+    padding: 20px;
+    border: 2px solid #caa24d;
+    background: rgba(20, 10, 5, 0.8);
+    font-size: 20px;
+}
+
+.uix-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0%;
+    margin: 0 auto;
+}
+
+.uix {
+    width: 90%;
+    height: 10%;
+    display: grid;
+    grid-template-columns: repeat(3, 0.4fr);
+    align-items: center;
+    background: rgba(0, 0, 0, 0.65);
+    border: 2px solid #caa24d;
+    padding: 12px;
+    color: #f5e6c8;
+}
+
+.hud {
+    margin: 10px;
+    
+}
+
+.life-bar {
+    width: 50rem;
+    height: 20px;
+    background: #333;
+    border: 1px solid #caa24d;
+}
+
+.life-fill {
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(to right, red, gold);
+    transition: width 0.5s;
+}
+
+.choices {
+    margin: 8px;
+    left: 5rem;
+    display: flex;
+}
+
+button {
+    text-align: center;
+    padding: 30px;
+    margin: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    height: 5rem;
+}
+
+button:first-child {
+    background: #caa24d;
+}
+
+button:last-child {
+    background: #8b1e1e;
+}
