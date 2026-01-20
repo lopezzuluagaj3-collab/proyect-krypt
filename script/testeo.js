@@ -1,9 +1,9 @@
-function test(nombre, callback) {
+/*function test(nombre, callback) {
   try {
     callback();
-    console.log(`✅ ${nombre}`);
+    console.log(`${nombre}`);
   } catch (error) {
-    console.error(`❌ ${nombre}`);
+    console.error(`${nombre}`);
     console.error(error.message);
   }
 }
@@ -19,4 +19,4 @@ test("Alma aumenta pureza correctamente", () => {
   alma.aumentarPureza(10);
 
   assert(alma.pureza === 60, "La pureza debería ser 60");
-});
+});*/

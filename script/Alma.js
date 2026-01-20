@@ -1,4 +1,4 @@
-export class Alma {
+class Alma {
   constructor(nombre) {
     this.nombre = nombre;
     this.pureza = 50;
@@ -27,7 +27,6 @@ export class Alma {
 
   evaluarDestino() {
     if (this.pureza >= 70) this.estado = "salvada";
-    else if (this.pureza >= 40) this.estado = "dudosa";
     else this.estado = "condenada";
 
     return this.estado;

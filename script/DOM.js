@@ -1,4 +1,12 @@
-/*const alma = new Alma("Carlos");
+const names =document.getElementById("name")
+const btnNames =document.getElementById("btn-name")
+const preguntaEl = document.getElementById("question");
+const opcionesEl = document.getElementById("option");
+const purezaEl = document.getElementById("purity");
+const mensajeAnubisEl = document.getElementById("messages-anubis");
+
+let juego=null
+
 
 const preguntas = [
   new Pregunta("¿Mentiste para salvar a alguien?", [
@@ -8,49 +16,102 @@ const preguntas = [
   new Pregunta("¿Robaste por necesidad?", [
     { texto: "Sí", impacto: { pureza: -10 } },
     { texto: "No", impacto: { pureza: +10 } }
+  ]),
+  new Pregunta("¿Robaste por necesidad?", [
+    { texto: "Sí", impacto: { pureza: -10 } },
+    { texto: "No", impacto: { pureza: +10 } }
+  ]),
+  new Pregunta("¿Robaste por necesidad?", [
+    { texto: "Sí", impacto: { pureza: -10 } },
+    { texto: "No", impacto: { pureza: +10 } }
+  ]),
+  new Pregunta("¿Robaste por necesidad?", [
+    { texto: "Sí", impacto: { pureza: -10 } },
+    { texto: "No", impacto: { pureza: +10 } }
+  ]),
+  new Pregunta("¿Robaste por necesidad?", [
+    { texto: "Sí", impacto: { pureza: -10 } },
+    { texto: "No", impacto: { pureza: +10 } }
+  ]),
+  new Pregunta("¿Robaste por necesidad?", [
+    { texto: "Sí", impacto: { pureza: -10 } },
+    { texto: "No", impacto: { pureza: +10 } }
+  ]),
+  new Pregunta("¿Robaste por necesidad?", [
+    { texto: "Sí", impacto: { pureza: -10 } },
+    { texto: "No", impacto: { pureza: +10 } }
   ])
 ];
 
-const juego = new Juego(alma, preguntas);
-juego.iniciar();*/
-
-const preguntaEl = document.getElementById("question");
-const opcionesEl = document.getElementById("option");
-const purezaEl = document.getElementById("purity");
-const mensajeAnubisEl = document.getElementById("messages-anubis");
-
-
-function renderizarPregunta(pregunta) {
-  preguntaEl.textContent = pregunta.texto;
-  opcionesEl.innerHTML = ""; 
-
-  pregunta.opciones.forEach((opcion, index) => {
-    const btn = document.createElement("button");
-    btn.textContent = opcion.texto;
-
-    btn.addEventListener("click", () => {
-      juego.responder(index);
-      actualizarUI();
-    });
+btnNames.addEventListener("click", () => {
+  const alma = new Alma(names.value);
+  juego = new Juego(alma, preguntas);
+  btnNames.style.display = "none"
+  names.style.display = "none"
+  renderizarPreambulo();
+  
+})
+function renderizarPreambulo(){
+  const preambulo = juego.preambulo()
+  if(preambulo){
+    mensajeAnubisEl.innerHTML = `${preambulo}`;
+    opcionesEl.innerHTML = "";
+    const btn = document.createElement("button")
+      btn.textContent = "continue"
+      btn.addEventListener('click', () => {
+        renderizarPreambulo();
+        btn.style.display = "none"
+      });
 
     opcionesEl.appendChild(btn);
-  });
+  } else {
+    preguntaEl.textContent = "Comencemos!!";
+    preguntas.innerHTML = "";
+    mensajeAnubisEl.innerHTML = "";
+    setTimeout(() => {
+        juego.iniciar();
+      }, 2000);
+  }
+
 }
+function renderizarPregunta(pregunta) {
+    preguntaEl.textContent = pregunta.texto;
+    opcionesEl.innerHTML = ""; 
 
+    pregunta.opciones.forEach((opcion, index) => {
+      const btn = document.createElement("button");
+      btn.textContent = opcion.texto;
 
+      btn.addEventListener("click", () => {
+        
+        const impacto = juego.preguntaActual.obtenerImpacto(index);
 
+        juego.responder(index);
 
-const juego = new Juego(alma, preguntas)
+        mensajeAnubisEl.textContent = juego.anubis.reaccionar(impacto);
+        setTimeout(() => {
+          mensajeAnubisEl.textContent = "";
+        }, 6000);
+        actualizarUI();
+      });
+
+      opcionesEl.appendChild(btn);
+    });
+  }
 
 function actualizarUI() {
-  purezaEl.textContent = juego.alma.pureza
+  if(!juego) return
+    purezaEl.textContent = juego.alma.pureza
 
-  if (juego.preguntaActual) {
-    renderizarPregunta(juego.preguntaActual)
-  }else {
-    mensajeAnubisEl.textContent = juego.anubis.juzgar(juego.alma)
-    preguntaEl.textContent = ""
-    opcionesEl.innerHTML =""
+    if (juego.preguntaActual) {
+      renderizarPregunta(juego.preguntaActual)
+    }else {
+      mensajeAnubisEl.textContent = juego.finalizar();
+      preguntaEl.textContent = ""
+      opcionesEl.innerHTML =""
+
+      setTimeout(() => {
+    window.location.href = "../index.html";
+  }, 6000);
+    }
   }
-}
-
