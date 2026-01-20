@@ -35,6 +35,10 @@ btnSong.addEventListener("click", (e) =>{
 })
 
 function Start() {
+    localStorage.setItem("gameSession", JSON.stringify({
+        started: true,
+        time: Date.now()
+    }));
     bgStart.classList.add("Bg-start");
     
     video.play().catch(error => {

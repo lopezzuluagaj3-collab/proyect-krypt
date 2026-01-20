@@ -7,6 +7,15 @@ const mensajeAnubisEl = document.getElementById("messages-anubis");
 
 let juego=null
 
+document.addEventListener("DOMContentLoaded", () => {
+
+  const session = JSON.parse(localStorage.getItem("gameSession"));
+  if (!session || !session.started) {
+    window.location.href = "../index.html";
+
+    return;
+  }
+});
 
 const preguntas = [
   new Pregunta("¿Mentiste para salvar a alguien?", [
@@ -66,7 +75,7 @@ function renderizarPreambulo(){
     opcionesEl.appendChild(btn);
   } else {
     preguntaEl.textContent = "Comencemos!!";
-    preguntas.innerHTML = "";
+    opcionesEl.innerHTML = "";
     mensajeAnubisEl.innerHTML = "";
     setTimeout(() => {
         juego.iniciar();
@@ -100,6 +109,7 @@ function renderizarPregunta(pregunta) {
   }
 
 function actualizarUI() {
+  
   if(!juego) return
     purezaEl.textContent = juego.alma.pureza
 
@@ -111,7 +121,8 @@ function actualizarUI() {
       opcionesEl.innerHTML =""
 
       setTimeout(() => {
-    window.location.href = "../index.html";
-  }, 6000);
+        localStorage.removeItem("gameSession");
+        window.location.href = "../index.html";
+      }, 6000);
     }
   }
