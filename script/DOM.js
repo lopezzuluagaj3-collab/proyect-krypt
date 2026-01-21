@@ -44,7 +44,7 @@ const preguntas = [
 ];
 
 btnNames.addEventListener("click", () => {
-  const nombreLimpio = new Alma(names.value.trim());
+  const nombreLimpio = names.value.trim();
   if(nombreLimpio === ""){
     alert("Ingresa un nombre")
     return 
