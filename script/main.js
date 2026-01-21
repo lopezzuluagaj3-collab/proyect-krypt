@@ -1,2 +1,2 @@
-juego.iniciar();
+
 actualizarUI();
