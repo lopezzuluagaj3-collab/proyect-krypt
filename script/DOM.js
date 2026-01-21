@@ -1,5 +1,5 @@
 const names =document.getElementById("name")
-const btnNames =document.getElementById("btn-name")
+const btnNames = document.querySelector("#btn-name")
 const preguntaEl = document.getElementById("question");
 const opcionesEl = document.getElementById("option");
 const purezaEl = document.getElementById("purity");
@@ -44,7 +44,12 @@ const preguntas = [
 ];
 
 btnNames.addEventListener("click", () => {
-  const alma = new Alma(names.value);
+  const nombreLimpio = new Alma(names.value.trim());
+  if(nombreLimpio === ""){
+    alert("Ingresa un nombre")
+    return 
+  }
+  const alma = new Alma(nombreLimpio)
   juego = new Juego(alma, preguntas);
   btnNames.style.display = "none"
   names.style.display = "none"
@@ -66,6 +71,7 @@ function renderizarPreambulo(){
     opcionesEl.appendChild(btn);
   } else {
     preguntaEl.textContent = "Comencemos!!";
+    preguntaEl.classList = "question-box"
     preguntas.innerHTML = "";
     mensajeAnubisEl.innerHTML = "";
     setTimeout(() => {
@@ -75,12 +81,14 @@ function renderizarPreambulo(){
 
 }
 function renderizarPregunta(pregunta) {
+    
     preguntaEl.textContent = pregunta.texto;
     opcionesEl.innerHTML = ""; 
 
     pregunta.opciones.forEach((opcion, index) => {
       const btn = document.createElement("button");
       btn.textContent = opcion.texto;
+      
 
       btn.addEventListener("click", () => {
         
@@ -107,6 +115,7 @@ function actualizarUI() {
       renderizarPregunta(juego.preguntaActual)
     }else {
       mensajeAnubisEl.textContent = juego.finalizar();
+      preguntaEl.style.display = "none"
       preguntaEl.textContent = ""
       opcionesEl.innerHTML =""
 
