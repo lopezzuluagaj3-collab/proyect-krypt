@@ -1,0 +1,36 @@
+.instructions h1 {
+    font-size: 2.5rem;
+    color: var(--Btn-color-2);
+    text-align: center;
+}
+
+.instructions-box {
+    color:#f5e6c8;
+    font-size: 1.4rem;
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.instructions-box ul {
+    margin-top: 15px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.instructions-box li {
+    margin-bottom: 10px;
+}
+
+.warning {
+    margin-top: 15px;
+    color: #C2A66F;
+    font-style: italic;
+    text-align: center;
+}
+
+
+
+
+
