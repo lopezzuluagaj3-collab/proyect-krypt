@@ -15,8 +15,8 @@ preguntas = [
     { texto: "No", impacto: { pureza: -5 } }
   ]),
   new Pregunta("¿Robaste por necesidad?", [
-    { texto: "Sí", impacto: { pureza: -10 } },
-    { texto: "No", impacto: { pureza: +10 } }
+    { texto: "Sí", impacto: { pureza: +10 } },
+    { texto: "No", impacto: { pureza: -10 } }
   ]),
 new Pregunta("¿Robaste comida porque tenías hambre?", [
   { texto: "Sí", impacto: { pureza: +3 } },
