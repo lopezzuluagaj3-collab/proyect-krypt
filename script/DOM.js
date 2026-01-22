@@ -7,6 +7,8 @@ const mensajeAnubisEl = document.getElementById("messages-anubis");
 
 let juego=null
 
+
+//esta clase se encarga de contener las preguntas que hara anubis
 preguntas = [
   new Pregunta("¿Mentiste para salvar a alguien?", [
     { texto: "Sí", impacto: { pureza: +5 } },
