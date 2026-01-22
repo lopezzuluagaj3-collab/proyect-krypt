@@ -63,6 +63,7 @@ function renderizarPreambulo(){
     opcionesEl.innerHTML = "";
     const btn = document.createElement("button")
       btn.textContent = "continue"
+      btn.classList = "btn-main";
       btn.addEventListener('click', () => {
         renderizarPreambulo();
         btn.style.display = "none"
@@ -88,7 +89,7 @@ function renderizarPregunta(pregunta) {
     pregunta.opciones.forEach((opcion, index) => {
       const btn = document.createElement("button");
       btn.textContent = opcion.texto;
-      
+      btn.classList = "btn-main";
 
       btn.addEventListener("click", () => {
         

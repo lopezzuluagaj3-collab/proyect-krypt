@@ -34,7 +34,8 @@ btnSong.addEventListener("click", (e) =>{
     toggleAudio();
 })
 
-function Start() {
+btnStart.addEventListener("click", (e) =>{
+    e.preventDefault()
     bgStart.classList.add("Bg-start");
     
     video.play().catch(error => {
@@ -42,8 +43,6 @@ function Start() {
     });
 
     setTimeout(()=>{
-        window.location.href= "template/main.html"
+        window.location.href= "./template/main.html"
     },6000)
-}
-
-btnStart.addEventListener("click", Start)
+})

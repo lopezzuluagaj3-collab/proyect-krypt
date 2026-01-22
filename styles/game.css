@@ -137,18 +137,4 @@ h1 {
     margin: 20px;
 }
 
-button {
-    width: 160px;
-    height: 50px;
-    font-size: 18px;
-    border-radius: 8px;
-    transition: transform 0.15s, box-shadow 0.15s;
-}
 
-button:first-child {
-    background: #caa24d;
-}
-
-button:last-child {
-    background: #8b1e1e;
-}
