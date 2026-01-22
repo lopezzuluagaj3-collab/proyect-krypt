@@ -1,1 +1,2 @@
-//actualizarUI();
+
+actualizarUI();
