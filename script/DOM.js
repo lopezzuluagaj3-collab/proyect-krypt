@@ -4,6 +4,7 @@ const preguntaEl = document.getElementById("question");
 const opcionesEl = document.getElementById("option");
 const purezaEl = document.getElementById("purity");
 const mensajeAnubisEl = document.getElementById("messages-anubis");
+const title = document.getElementById("title")
 
 let juego=null
 
@@ -54,6 +55,7 @@ btnNames.addEventListener("click", () => {
   juego = new Juego(alma, preguntas);
   btnNames.style.display = "none"
   names.style.display = "none"
+  title.style.display = "none"
   balance.classList.remove("fadeIn");
   renderizarPreambulo();
 })
@@ -65,7 +67,7 @@ function renderizarPreambulo(){
     opcionesEl.innerHTML = "";
     const btn = document.createElement("button")
       btn.textContent = "continue"
-      btn.classList = "btn-main";
+      btn.classList = "btn-name";
       btn.addEventListener('click', () => {
         renderizarPreambulo();
         btn.style.display = "none"
@@ -91,7 +93,7 @@ function renderizarPregunta(pregunta) {
     pregunta.opciones.forEach((opcion, index) => {
       const btn = document.createElement("button");
       btn.textContent = opcion.texto;
-      btn.classList = "btn-main";
+      btn.classList = "btn-name";
 
       btn.addEventListener("click", () => {
         

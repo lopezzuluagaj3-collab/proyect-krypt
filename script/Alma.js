@@ -5,6 +5,7 @@ class Alma {
     this.pecados = 0;
     this.virtudes = 0;
     this.estado = "juzgando";
+    setTimeout(() => this.Judge(), 10);
   }
 
   aumentarPureza(valor) {

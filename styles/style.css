@@ -85,11 +85,11 @@ body {
 .Logo-Container img:hover {
     transform: scale(1.02);
 }
-
 .btn-main a {
     text-decoration: none;
     color: #000;
 }
+
 .btn-main{
     font-size: 2rem;
     display: flex;
