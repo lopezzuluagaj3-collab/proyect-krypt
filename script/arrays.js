@@ -5,7 +5,6 @@ const ANUBIS_PUREZA_POSITIVA = [
   "El equilibrio ha sido respetado.",
   "Una virtud se suma a tu espíritu."
 ];
-
 const ANUBIS_PUREZA_NEGATIVA = [
   "La balanza se inclina peligrosamente.",
   "Tu corazón pesa más de lo debido.",
@@ -13,3 +12,4 @@ const ANUBIS_PUREZA_NEGATIVA = [
   "Ammut afila sus fauces.",
   "La sombra crece en tu alma."
 ];
+
