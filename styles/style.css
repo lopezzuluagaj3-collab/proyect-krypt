@@ -137,28 +137,3 @@ body {
     font-size: 22px;
     gap: 5px;
 }
-
-.balanceArm {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-    width: 400px;
-    height: 200px;
-}
-
-.balanceArm img[alt="XD"] {
-    position: absolute;
-    transform: translateX(-50%);
-    object-fit: contain;
-    width: 100%;
-}
-
-.balancePlate {
-    transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 20;
-}
-
-.plateVisual {
-    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5));
-}

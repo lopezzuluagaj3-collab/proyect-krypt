@@ -10,11 +10,13 @@ class Alma {
   aumentarPureza(valor) {
     this.pureza = Math.min(100, this.pureza + valor);
     this.virtudes++;
+    this.Judge();
   }
 
   disminuirPureza(valor) {
     this.pureza = Math.max(0, this.pureza - valor);
     this.pecados++;
+    this.Judge();
   }
 
   responder(impacto) {
@@ -41,10 +43,10 @@ class Alma {
     const r = 100 - this.pureza;
 
     const dif = l - r;
-    const angle = dif * 0.3;
+    const angle = dif * 0.2;
 
-    arm.style.transform = `rotate(${angle}deg)`;
-    hL.style.transform = `rotate(${-angle}deg)`;
-    hR.style.transform = `rotate(${-angle}deg)`;
+    arm.style.transform = `rotate(${-angle}deg)`;
+    hL.style.transform = `rotate(${angle}deg)`;
+    hR.style.transform = `rotate(${angle}deg)`;
   }
 }

@@ -45,6 +45,7 @@ const preguntas = [
 
 btnNames.addEventListener("click", () => {
   const nombreLimpio = names.value.trim();
+  const balance = document.getElementById("judgeBalance");
   if(nombreLimpio === ""){
     alert("Ingresa un nombre")
     return 
@@ -53,9 +54,10 @@ btnNames.addEventListener("click", () => {
   juego = new Juego(alma, preguntas);
   btnNames.style.display = "none"
   names.style.display = "none"
+  balance.classList.remove("fadeIn");
   renderizarPreambulo();
-  
 })
+
 function renderizarPreambulo(){
   const preambulo = juego.preambulo()
   if(preambulo){
