@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/game.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <title>crypt game</title>
+</head>
+
+<body>
+    <main>
+        <section class="game-container">
+
+            <div class="name-container">
+                <h1 id="title">Anubis juzga tu alma</h1>
+                <input type="text" id="name" placeholder="Alma a Juzgar: ">
+                <button id="btn-name" class="btn-name">Send</button>
+            </div>
+        </section>
+
+        <div class="anuscene-container">
+            <img src="../img/Anubis.png" class="god">
+        </div>
+
+        <section class="uix">
+            <div class="face">
+                <img src="../assets/icons/face.png" alt="">
+            </div>
+
+            <div class="hud">
+                <div>
+                    <p id="question"></p>
+                </div>
+
+                <div class="anubis">
+                    <h3 id="messages-anubis"></h3>
+
+                    <p>Purity of soul: <span class="soul" id="purity">50</span></p>
+                </div>
+
+            </div>
+
+            <div id="option" class="choices"></div>
+        </section>
+
+    </main>
+
+    <div class="fadeIn balanceScene" id="judgeBalance">
+        <div id="armWrapper" class="balanceArm">
+            
+            <img src="../img/Arm.png"width="400px" height="300px" alt="XD">
+
+            <div id="leftHanger" class="balancePlate">
+                <img src="../img/ArmL.png" width="140px" height="100px" class="plateVisual" alt="Plate Left">
+            </div>
+
+            <div id="rightHanger" class="balancePlate">
+                <img src="../img/ArmR.png" width="140px" height="100px" class="plateVisual" alt="Plate Right">
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="../script/main.js"></script>
+    <script src="../script/utils.js"></script>
+    <script src="../script/Alma.js"></script>
+    <script src="../script/arrays.js"></script>
+    <script src="../script/Anubis.js"></script>
+    <script src="../script/pregunta.js"></script>
+    <script src="../script/juego.js"></script>
+    <script src="../script/DOM.js"></script>
+    <script src="../script/main.js" defer></script>
+    <script src="../script/testeo.js" defer></script>
+
+</body>
+
+</html>
