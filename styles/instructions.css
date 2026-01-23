@@ -1,3 +1,10 @@
+:root{
+    --Bg-Ui-Main: rgba(49, 48, 48, 0.747); 
+    --Btn-Color : #C2A66F;
+    --Btn-color-2: #E6D7A3; 
+    --Btn-Shadow: #7a6845;
+}
+
 .instructions h1 {
     font-size: 2.5rem;
     color: var(--Btn-color-2);
@@ -13,11 +20,20 @@
     width: 100%;
 }
 
+.instructions-box p{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
 .instructions-box ul {
     margin-top: 15px;
     list-style: none;
-    padding-left: 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
+
 
 .instructions-box li {
     margin-bottom: 10px;
@@ -30,7 +46,39 @@
     text-align: center;
 }
 
+.btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
 
+.btn-main{
+    font-family: 'VT323', monospace;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 70px;
+    border-radius: 20px;
+    background-color: var(--Btn-Color);
+    border: none;
+    transition: all 0.1s ease;
+    box-shadow: 0 6px 0px var(--Btn-Shadow);
+}
+
+.btn-main:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0px var(--Btn-Shadow);
+    background-color: var(--Btn-color-2);
+}
+
+.btn-main:active{
+    transform: translateY(4px);
+    box-shadow: 0 2px 0px var(--Btn-Shadow);
+    filter: brightness(0.9);
+}
 
 
 
