@@ -9,52 +9,49 @@
 </head>
 
 <body>
-    <section class="game-container">
+    <main>
+        <section class="game-container">
 
             <div class="name-container">
                 <h1>Anubis juzga tu alma</h1>
                 <input type="text" id="name" placeholder="Alma a Juzgar: ">
                 <button id="btn-name">Send</button>
             </div>
-    </section>
+        </section>
 
-    <section class="anubis">
-        <h3 id="messages-anubis"></h3>
-
-        <p>Purity of soul: <span class="soul" id="purity">50</span></p>
-    </section>
-    <!--anubis-->
-
-    <section >
-        <p id="question"></p>
-    </section>
-    
-    <div class="uix">
-        <div class="face">
-            <img src="../assets/icons/face.png" alt="">
+        <div class="anuscene-container">
+            <img src="../img/anubis.png" class="god">
         </div>
 
-        <div class="hud">
-            <span>ALMA</span>
-            <div class="life-bar">
-                <div class="life-fill" id="lifeFill"></div>
+
+        <section class="uix">
+            <div class="face">
+                <img src="../assets/icons/face.png" alt="">
             </div>
-        </div>
 
-        <div id="option" class="choices">
-            
-        </div>
+            <div class="hud">
+                <div>
+                    <p id="question"></p>
+                </div>
 
-    </div>
-    <p id="messages-anubis"></p>
-    <h2 id="question"></h2>
-    <div id="option"></div>
-    <p>Purity of soul: <span id="purity">50</span></p>
+                <div class="anubis">
+                    <h3 id="messages-anubis"></h3>
+
+                    <p>Purity of soul: <span class="soul" id="purity">50</span></p>
+                </div>
+
+            </div>
+
+            <div id="option" class="choices"></div>
+        </section>
+
+    </main>
+
 
     <div class="fadeIn balanceScene" id="judgeBalance">
         <div id="armWrapper" class="balanceArm">
-            
-            <img src="../img/Arm.png"width="400px" height="300px" alt="XD">
+
+            <img src="../img/Arm.png" width="400px" height="300px" alt="XD">
 
             <div id="leftHanger" class="balancePlate">
                 <img src="../img/ArmL.png" width="140px" height="100px" class="plateVisual" alt="Plate Left">
@@ -66,7 +63,6 @@
 
         </div>
     </div>
-    
 
 
 
